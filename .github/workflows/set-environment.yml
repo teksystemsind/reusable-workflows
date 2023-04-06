@@ -1,0 +1,28 @@
+name: Set Environment
+
+on:
+ workflow_call:
+  
+jobs:
+ set-environment:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+   - name: cache m2 repositories
+     uses: actions/cache@v3
+     env:
+      cache-name: cache-node-modules
+     with:
+            path: ~/.m2/repository
+            key: ${{runner.os}}-maven-${{env.cache-name}}-${{hashFiles('**/pom.xml')}}
+            restore-keys:
+              ${{runner.os}}-maven-${{env.cache-name}}
+              ${{runner.os}}-maven
+              ${{runner.os}}-
+   - name: Set JDK 1.8
+     uses: actions/setup-java@v3
+     with:
+        distribution: 'temurin'
+        java-version: 8
+        path: ~/.m2/repository
+        settings-path: ${{github.workspace}} 
