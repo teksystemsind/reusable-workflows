@@ -34,4 +34,4 @@ jobs:
         distribution: 'zulu'
         java-version: 8    
      - name: Deploy to Sandbox
-       run: mvn deploy -DskipTests -DmuleDeploy -Dmule.artifact=$artifactName -Danypoint.username="$ANYPOINT_USERNAME" -Danypoint.password="$ANYPOINT_PASSWORD"
+       run: mvn deploy -DskipTests -DmuleDeploy -Dmule.artifact=$artifactName -Danypoint.username=${{ secrets.ANYPOINT_USERNAME }} -Danypoint.password=${{ secrets.ANYPOINT_PASSWORD }}
