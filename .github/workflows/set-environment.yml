@@ -26,3 +26,10 @@ jobs:
         java-version: 8
         path: ~/.m2/repository
         settings-path: ${{github.workspace}} 
+   - name: Run Lint
+     run: mvn org.nuisto:mule-lint-maven-plugin:analyze-mule
+   - uses: actions/checkout@v3
+   - uses: actions/upload-artifact@v2
+     with:
+      name: mule-lint-results
+      path: mule-lint-results.json     
