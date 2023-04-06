@@ -2,7 +2,7 @@ name: xml & yml Validations
 on: push
 jobs:
   xml-validation:
-    runs-on: ${{ RUNNER_SM_NAME }}
+    runs-on: ${{ vars.RUNNER_SM_NAME }}
     steps:
         - name: Checkout
           uses: actions/checkout@master  
