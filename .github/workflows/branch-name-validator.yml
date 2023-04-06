@@ -2,7 +2,7 @@ name: Required Workflows
 on: pull_request
 jobs:
   branch-naming-rules:
-    runs-on: self-hosted
+    runs-on: ${{ vars.RUNNER_SM_NAME }}
     steps:
       - uses: deepakputhraya/action-branch-name@v1.0.0
         with:
