@@ -1,10 +1,10 @@
-name: Set Environment
+name: run-mule-lint
 
 on:
  workflow_call:
   
 jobs:
- set-environment:
+ run-mule-lint:
   runs-on: ubuntu-latest
   steps:
    - uses: actions/checkout@v3
