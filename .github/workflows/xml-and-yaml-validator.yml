@@ -1,7 +1,6 @@
 name: xml & yml Validations
-on: 
- push:
- pull_request:
+on: push
+
 jobs:
   xml-validation:
     runs-on: ${{ vars.RUNNER_SM_NAME }}
