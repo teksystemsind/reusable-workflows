@@ -2,8 +2,11 @@ name: test
 on:
  push:
  pull_request:
+ repository_dispatch:
+  types: [create]
 jobs:
  test:
   runs-on: ubuntu-latest
   steps:
-   run: echo "Test"
+  - name : run
+    run: echo "Test"
