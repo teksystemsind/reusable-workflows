@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: deepakputhraya/action-branch-name@v1.0.0
         with:
-          regex: ([a-z])+\/([a-z])+
+          regex: ([a-z])+\-([a-z])+
           allowed_prefixes: feat,feature,fix,bugfix,hotfix,release,dependabot,automation
           ignore: master,develop
           min_length: 5
